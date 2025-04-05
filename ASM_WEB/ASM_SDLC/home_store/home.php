@@ -106,7 +106,7 @@ if (isset($_SESSION['user_id'])) {
                   <div class="mB-sub-gallery">
                     <button class="btn btn-secondary header-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navbarGallery">Gallery</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="../store/store.php">Explore more device</a>
+                      <a class="dropdown-item" href="../store/store.php">All Products</a>
                       <a class="dropdown-item" href="#">EXPERIENCE STORE</a>
                       <a class="dropdown-item" href="#">Genuine Benefits</a>
                     </div>
@@ -284,7 +284,7 @@ if (isset($_SESSION['user_id'])) {
         </div>
         </div>
         <div class="slide-show">
-          <h3>Some product you may like</h3>
+          <h1>Some product you may like</h1>
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="slide carousel-item active">

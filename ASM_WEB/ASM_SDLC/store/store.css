@@ -9,7 +9,9 @@
   --color-e89: #e89cff;
   --color-ae85: #ae85b6;
 }
-
+body{
+  font-family:sans-serif ;
+}
 h3 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -146,7 +148,7 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 350px;
+  width: 550px;
   height: 150px;
   margin-right: 40px;
   background: #f3f3f3;
@@ -287,6 +289,12 @@ button {
   width: 150px;
   object-fit: contain;
   /* padding: 20px; */
+}
+.img-contain img {
+  width: 260px;
+  height: 207px;
+  object-fit: contain;
+
 }
 .appear-product-container .price-contain {
   overflow: hidden;

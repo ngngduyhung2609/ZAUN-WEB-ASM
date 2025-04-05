@@ -9,6 +9,9 @@
   --color-e89: #e89cff;
   --color-ae85: #ae85b6;
 }
+body{
+  font-family:sans-serif ;
+}
 
 h3 {
   overflow: hidden;
@@ -18,12 +21,14 @@ h3 {
 p {
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 
 a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 span {
   white-space: nowrap;
@@ -355,7 +360,7 @@ input:checked + label .tab-content {
 .slide-show{
   width: 100%;
 }
-.slide-show h3{
+.slide-show h1{
   margin: 35px;
 }
 .slide {

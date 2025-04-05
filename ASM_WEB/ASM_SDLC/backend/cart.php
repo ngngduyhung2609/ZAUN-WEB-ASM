@@ -3,7 +3,7 @@ session_start();
 include '../db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
     $quantity = filter_var($_POST['quantity'] ?? 1, FILTER_VALIDATE_INT) ?: 1;
 
     if ($product_id === false || $quantity <= 0) {
-        echo json_encode(['status' => 'error', 'message' => 'Thông tin sản phẩm hoặc số lượng không hợp lệ!']);
+        echo json_encode(['status' => 'error', 'message' => 'Product information is not valid!']);
         exit();
     }
 
@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
         ");
         $stmt->bind_param("iiii", $user_id, $product_id, $quantity, $quantity);
         $stmt->execute();
-        echo json_encode(['status' => 'success', 'message' => 'Đã thêm vào giỏ hàng!']);
+        echo json_encode(['status' => 'success', 'message' => 'Added to cart!']);
     } else {
-        echo json_encode(['status' => 'error', 'message' => "Không đủ hàng tồn kho cho sản phẩm này! (Còn: $stock)"]);
+        echo json_encode(['status' => 'error', 'message' => "Not enough stock! (Còn: $stock)"]);
     }
     exit();
 }
@@ -43,14 +43,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove_from_cart'])) {
     $cart_id = filter_var($_POST['cart_id'], FILTER_VALIDATE_INT);
     if ($cart_id === false) {
-        echo json_encode(['status' => 'error', 'message' => 'ID giỏ hàng không hợp lệ!']);
+        echo json_encode(['status' => 'error', 'message' => 'ID Cart is not valid!']);
         exit();
     }
 
     $stmt = $conn->prepare("DELETE FROM cart WHERE cart_id = ? AND user_id = ?");
     $stmt->bind_param("ii", $cart_id, $user_id);
     $stmt->execute();
-    echo json_encode(['status' => 'success', 'message' => 'Đã xóa khỏi giỏ hàng!']);
+    echo json_encode(['status' => 'success', 'message' => 'Deleted from cart!']);
     exit();
 }
 

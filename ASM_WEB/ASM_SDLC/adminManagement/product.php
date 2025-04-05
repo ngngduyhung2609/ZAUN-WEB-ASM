@@ -92,7 +92,16 @@ $product = $result->fetch_assoc();
             height: 690px;
             width: 550px;
         }
-
+        .buy-now-btn{
+          background: linear-gradient(to right, #eecaff, #e390fc) !important;
+          color: white;
+          padding: 10px 20px !important;
+          border-radius: 25px !important;
+          font-size: 15px !important;
+          cursor: pointer;
+          transition: 0.3s;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+        }
     </style>
 </head>
 <body>
@@ -235,19 +244,13 @@ $product = $result->fetch_assoc();
                  <img src="../img/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
             </div>
             <div class="div2"> <h1><?php echo htmlspecialchars($product['name']); ?></h1> </div>
-            <div class="div3"> <h3>Price: <?php echo htmlspecialchars($product['price']); ?> $</h3> </div>
+            <div class="div3"> <h3>Price: <?php echo htmlspecialchars($product['price']); ?> $</h3> <br> <button class="add-to-cart buy-now-btn">Add to Cart</button> </div>
             <div class="div4"> <p><?php echo htmlspecialchars($product['description']); ?></p> </div>
         </div>        
     <?php else: ?>
         <p>Product not exist.</p>
     <?php endif; ?>
-    </div>
-    
-    
-        
-            
-        </div>
-    </main>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

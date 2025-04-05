@@ -293,42 +293,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
               <h3>Help me make a decision </h3>
             </div>
           </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="../img/computer_yellow.jpg" alt="">
-            </div>
-            <div class="product-infor">
-              <h3>Help me make a decision </h3>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="../img/computer_yellow.jpg" alt="">
-            </div>
-            <div class="product-infor">
-              <h3>Help me make a decision </h3>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="../img/computer_yellow.jpg" alt="">
-            </div>
-            <div class="product-infor">
-              <h3>Help me make a decision </h3>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="../img/computer_yellow.jpg" alt="">
-            </div>
-            <div class="product-infor">
-              <h3>Help me make a decision </h3>
-            </div>
-          </div>
           
           <div class="product-card">
             <div class="product-image">
@@ -562,8 +526,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
                     })
                     .catch(error => console.error('Error:', error));
                 <?php else: ?>
-                    alert('Vui lòng đăng nhập để thêm sản phẩm vào giỏ!');
-                    window.location.href = 'login.php';
+                    alert('Please login before add product to cart!');
+                    window.location.href = '../backend/login.php';
                 <?php endif; ?>
             });
         });
@@ -583,18 +547,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
                 if (data.status === 'success') {
                     cartCount++;
                     document.getElementById('cart-count').innerText = cartCount;
-                    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+                    alert('Added success!');
                 } else {
                     alert(data.message);
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Đã xảy ra lỗi khi thêm sản phẩm!' + error.message);
+                alert('Have some error when add product!' + error.message);
             });
         <?php else: ?>
-            alert('Vui lòng đăng nhập để thêm sản phẩm vào giỏ!');
-            window.location.href = 'login.php';
+            alert('Please enter before add product to cart!');
+            window.location.href = '../backend/login.php';
         <?php endif; ?>
     }
     </script>

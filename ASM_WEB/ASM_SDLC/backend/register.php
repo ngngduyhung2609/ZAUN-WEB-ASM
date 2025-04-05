@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="text" id="full_name" class="input-card fadeIn second" name="full_name" placeholder="Full name" required>
                 <input type="text" id="email" class="input-card fadeIn third" name="email" placeholder="Email" required>
                 <input type="text" id="phone" class="input-card fadeIn third" name="phone" placeholder="Phone">
-                <input type="text" id="address" class="input-card fadeIn third" name="address" placeholder="Address">
+                <!-- <input type="text" id="address" class="input-card fadeIn third" name="address" placeholder="Address"> -->
                 <!-- <input type="submit" class="fadeIn fourth" value="Register"> -->
                 <button type="submit" class="resgister-btn btn btn-primary ">Register</button>
             </form>
